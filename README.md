@@ -12,20 +12,41 @@ Bu çalışma, nesne takibi (Object Tracking) problemlerine çözüm üretmek am
 1.  **Nesne Tespiti (Detection):** Her karedeki nesnelerin (insan, araç vb.) konumlarının belirlenmesi.
 2.  **Nesne Takibi (Tracking):** Tespit edilen nesnelerin kareler arasında ilişkilendirilmesi ve benzersiz ID atanması.
 
-## 🛠️ Kullanılan Teknolojiler
+Bu proje özellikle güvenlik sistemleri, otonom sürüş ve trafik analizi gibi alanlarda temel oluşturabilecek bir yapıdadır.
+
+## 🛠️ Kullanılan Teknolojiler ve Yöntemler
+
+Projede aşağıdaki kütüphaneler ve algoritmalar kullanılmıştır:
 
 * **Dil:** Python
 * **Görüntü İşleme:** OpenCV
-* **Derin Öğrenme:** PyTorch / TensorFlow
-* **Model:** YOLO (You Only Look Once)
-* **Takip Algoritması:** DeepSORT / SORT
+* **Derin Öğrenme:** [Örn: PyTorch / TensorFlow]
+* **Tespit Algoritması:** [Örn: YOLOv8 / YOLOv5 / SSD]
+* **Takip Algoritması:** [Örn: DeepSORT / ByteTrack / SORT]
 
 ## 🚀 Kurulum
 
-Projeyi yerel makinenizde çalıştırmak için terminalde şu komutları çalıştırın:
+Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
+
+1.  **Repoyu klonlayın:**
+    ```bash
+    git clone [https://github.com/halukcansarioz/coklu-nesne-takibi.git](https://github.com/halukcansarioz/coklu-nesne-takibi.git)
+    cd coklu-nesne-takibi
+    ```
+
+2.  **Gerekli kütüphaneleri yükleyin:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *(Not: Eğer GPU desteği kullanacaksanız, PyTorch/TensorFlow'un CUDA versiyonlarını yüklediğinizden emin olun.)*
+
+## 💻 Kullanım
+
+Projeyi bir video dosyası veya web kamerası üzerinde çalıştırmak için:
 
 ```bash
-# 1. Repoyu klonlayın
-git clone [https://github.com/halukcansarioz/coklu-nesne-takibi.git](https://github.com/halukcansarioz/coklu-nesne-takibi.git)
-cd coklu-nesne-takibi
+# Web kamerası için
+python main.py --source 0
 
+# Video dosyası için
+python main.py --source data/ornek_video.mp4
