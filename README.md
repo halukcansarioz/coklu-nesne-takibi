@@ -30,7 +30,7 @@ Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 
 1.  **Repoyu klonlayın:**
     ```bash
-    git clone [https://github.com/halukcansarioz/coklu-nesne-takibi.git](https://github.com/halukcansarioz/coklu-nesne-takibi.git)
+    git clone https://github.com/halukcansarioz/coklu-nesne-takibi.git
     cd coklu-nesne-takibi
     ```
 
