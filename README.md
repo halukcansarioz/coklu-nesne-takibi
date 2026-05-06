@@ -1,5 +1,4 @@
-
-# 🎯 Çoklu Nesne Takibi (Multi-Object Tracking)
+# 🎯 Multi-Object Tracking (Çoklu Nesne Takibi)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halukcansarioz/coklu-nesne-takibi/blob/main/Derin_%C3%96%C4%9Frenme_ve_Yapay_Sinir_A%C4%9Flar%C4%B1.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -7,131 +6,129 @@
 [![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white)](#)
 [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)](#)
 
-Bu proje, video akışları üzerindeki birden fazla nesneyi gerçek zamanlı olarak algılamak, kimlik atamak ve takip etmek için geliştirilmiş bir Bilgisayarla Görme (Computer Vision) uygulamasıdır.
+This project is a Computer Vision application developed to detect, assign identities to, and track multiple objects in video streams in real time.
 
-## 📚 İçindekiler
-- [Proje Hakkında](#proje-hakkında)
-- [Özellikler](#özellikler)
-- [Kullanılan Teknolojiler ve Yöntemler](#kullanılan-teknolojiler-ve-yöntemler)
-- [Kurulum](#kurulum)
-- [Kullanım](#kullanım)
-- [Proje Yapısı](#proje-yapısı)
-- [Katkıda Bulunma](#katkıda-bulunma)
-- [İletişim](#iletisim)
-- [Lisans](#lisans)
-
----
-
-## Proje Hakkında
-Bu çalışma, nesne takibi (Object Tracking) problemlerine çözüm üretmek amacıyla hazırlanmıştır. Proje temel olarak şu adımları içerir:
-
-1. **Nesne Tespiti (Detection):** Her karedeki nesnelerin (insan, araç vb.) konumlarının belirlenmesi.
-2. **Nesne Takibi (Tracking):** Tespit edilen nesnelerin kareler arasında ilişkilendirilmesi ve benzersiz ID atanması.
-
-Bu proje özellikle güvenlik sistemleri, otonom sürüş ve trafik analizi gibi alanlarda temel oluşturabilecek bir yapıdadır.
-
-* **Geliştirici:** Haluk Can SARIÖZ
-* **Tür:** Bilgisayarla Görme / Derin Öğrenme Uygulaması
-* **Platform:** Google Colab / Jupyter Notebook
+## 📚 Table of Contents
+- [About the Project](#about-the-project)
+- [Features](#features)
+- [Technologies & Methods Used](#technologies--methods-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [Contact](#contact)
+- [License](#license)
 
 ---
 
-## Özellikler
-* **Çoklu Nesne Takibi:** Video akışında birden fazla nesneyi eş zamanlı izleme.
-* **Benzersiz ID Atama:** Her nesneye kalıcı kimlik atayarak kareler arası tutarlılık.
-* **Gerçek Zamanlı İşleme:** Optimize edilmiş algoritmalar ile düşük gecikme.
-* **Google Colab Desteği:** Doğrudan tarayıcı üzerinden çalıştırılabilir notebook.
-* **GPU Hızlandırma:** CUDA destekli PyTorch ile hızlı model çıkarımı.
+## About the Project
+This work was created to provide solutions to object tracking problems. The project basically includes the following steps:
+
+1. **Object Detection:** Determining the locations of objects (people, vehicles, etc.) in each frame.
+2. **Object Tracking:** Associating the detected objects between frames and assigning them unique IDs.
+
+This project can serve as a foundation particularly in areas such as security systems, autonomous driving, and traffic analysis.
+
+- **Developer:** Haluk Can SARIÖZ
+- **Type:** Computer Vision / Deep Learning Application
+- **Platform:** Google Colab / Jupyter Notebook
 
 ---
 
-## Kullanılan Teknolojiler ve Yöntemler
-Projede aşağıdaki kütüphaneler ve algoritmalar kullanılmıştır:
-
-| Kategori | Teknoloji |
-|----------|-----------|
-| **Dil** | Python |
-| **Görüntü İşleme** | OpenCV |
-| **Derin Öğrenme** | PyTorch, TorchVision |
-| **Tespit Algoritması** | YOLO (You Only Look Once) |
-| **Takip Algoritması** | SORT / DeepSORT |
-| **Yardımcı Kütüphaneler** | NumPy, Matplotlib, FilterPy, Scikit-learn |
-| **Ortam** | Jupyter Notebook / Google Colab |
+## Features
+- **Multi-Object Tracking:** Simultaneously track multiple objects in a video stream.
+- **Unique ID Assignment:** Assign a persistent identity to each object for consistency across frames.
+- **Real-Time Processing:** Low latency thanks to optimized algorithms.
+- **Google Colab Support:** Runnable notebook directly in the browser.
+- **GPU Acceleration:** Fast model inference with CUDA-enabled PyTorch.
 
 ---
 
-## Kurulum
-Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
+## Technologies & Methods Used
+The following libraries and algorithms are used in the project:
 
-### 1. Repoyu klonlayın:
+| Category | Technology |
+|----------|------------|
+| **Language** | Python |
+| **Image Processing** | OpenCV |
+| **Deep Learning** | PyTorch, TorchVision |
+| **Detection Algorithm** | YOLO (You Only Look Once) |
+| **Tracking Algorithm** | SORT / DeepSORT |
+| **Helper Libraries** | NumPy, Matplotlib, FilterPy, Scikit-learn |
+| **Environment** | Jupyter Notebook / Google Colab |
+
+---
+
+## Installation
+Follow the steps below to run the project on your local machine:
+
+### 1. Clone the repository:
 ```bash
 git clone https://github.com/halukcansarioz/coklu-nesne-takibi.git
 cd coklu-nesne-takibi
 ```
 
-### 2. Gerekli kütüphaneleri yükleyin:
+### 2. Install the required libraries:
 ```bash
 pip install -r requirements
 ```
+*(Note: If you want to use GPU support, make sure you install the CUDA versions of PyTorch.)*
 
-*(Not: Eğer GPU desteği kullanacaksanız, PyTorch'un CUDA versiyonlarını yüklediğinizden emin olun.)*
-
-### 3. Notebook'u başlatın:
+### 3. Launch the notebook:
 ```bash
 jupyter notebook "Derin_Öğrenme_ve_Yapay_Sinir_Ağları.ipynb"
 ```
-
-veya doğrudan **Google Colab** üzerinde açmak için yukarıdaki "Open In Colab" rozetine tıklayın.
+or click the **"Open In Colab"** badge above to open directly in Google Colab.
 
 ---
 
-## Kullanım
-Notebook hücrelerini sırasıyla çalıştırarak nesne tespiti ve takibi işlemlerini adım adım görebilirsiniz. Video kaynağını değiştirmek için ilgili hücredeki dosya yolunu güncelleyin:
+## Usage
+You can see the object detection and tracking processes step by step by running the notebook cells in order. To change the video source, update the file path in the relevant cell:
 
 ```python
-# Web kamerası için
+# For webcam
 source = 0
 
-# Video dosyası için
-source = "data/ornek_video.mp4"
+# For a video file
+source = "data/sample_video.mp4"
 ```
 
 ---
 
-## Proje Yapısı
+## Project Structure
 ```text
 coklu-nesne-takibi/
-├── Derin_Öğrenme_ve_Yapay_Sinir_Ağları.ipynb   # Ana notebook (Colab uyumlu)
-├── requirements                                  # Python bağımlılıkları
-└── README.md                                     # Proje dökümantasyonu
+├── Derin_Öğrenme_ve_Yapay_Sinir_Ağları.ipynb   # Main notebook (Colab compatible)
+├── requirements                                  # Python dependencies
+└── README.md                                     # Project documentation
 ```
 
 ---
 
-## Katkıda Bulunma
-Katkılarınız, hata bildirimleriniz ve özellik istekleriniz memnuniyetle karşılanır!
+## Contributing
+Contributions, bug reports, and feature requests are welcome!
 
-1. Bu depoyu **Fork**'layın.
-2. Bir **Branch** oluşturun (`git checkout -b feature/YeniOzellik`).
-3. Değişikliklerinizi **Commit** edin (`git commit -m 'Ekleme: Yeni özellik'`).
-4. Kodlarınızı **Push**'layın (`git push origin feature/YeniOzellik`).
-5. Bir **Pull Request** açın.
+1. **Fork** this repository.
+2. Create a **Branch** (`git checkout -b feature/NewFeature`).
+3. Make your changes and **Commit** (`git commit -m 'Add: New feature'`).
+4. **Push** your code (`git push origin feature/NewFeature`).
+5. Open a **Pull Request**.
 
 ---
 
-<a name="iletisim"></a>
-## İletişim
+<a name="contact"></a>
+## Contact
 **Haluk Can Sarıöz**
 
 - GitHub: [@halukcansarioz](https://github.com/halukcansarioz)
-- E-posta: [halukcansarioz19@gmail.com](mailto:halukcansarioz19@gmail.com)
+- Email: [halukcansarioz19@gmail.com](mailto:halukcansarioz19@gmail.com)
 - LinkedIn: [Haluk Can Sarıöz](https://www.linkedin.com/in/halukcansarioz)
 
 ---
 
-*Bu projeyi faydalı bulduysanız ⭐ vermeyi unutmayın!*
+*If you found this project helpful, don't forget to ⭐ it!*
 
 ---
 
-## Lisans
-Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
+## License
+This project is licensed under the [MIT License](LICENSE).
